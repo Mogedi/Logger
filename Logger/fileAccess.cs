@@ -15,7 +15,7 @@ namespace Logger
         {
             List<string> listOfDirectories = getListOfDirectories(ip);
 
-            createDirectory(ip);
+            string localDirectory = createDirectory(ip);
 
 
             foreach (string directory in listOfDirectories)
@@ -33,7 +33,7 @@ namespace Logger
 
                 readAndAnalyzeLog readAnalyze = new readAndAnalyzeLog();
 
-                readAnalyze.Main(filePath);
+                readAnalyze.Main(filePath, localDirectory);
 
             }
 
@@ -92,7 +92,7 @@ namespace Logger
             return PathToFile;
         }
 
-        public void createDirectory(string ip)
+        public string createDirectory(string ip)
         {
             string path = "C:\\Users\\" + Environment.UserName + "\\Logger\\" + ip + "\\";
 
@@ -102,6 +102,8 @@ namespace Logger
             {
                 Directory.CreateDirectory(path);
             }
+
+            return path;
         }
 
         public void clearDirectory(string ip)
