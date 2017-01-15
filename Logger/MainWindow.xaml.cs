@@ -33,14 +33,14 @@ namespace Logger
             if (!testPingBool)
                 return;
 
-            fileAccess doesDirectoryExist = new fileAccess();
+            fileAccess file = new fileAccess();
 
-            bool directoryExist = doesDirectoryExist.doesDirectoryExist(ipTextBox.Text);
+            file.Main(ipTextBox.Text);
 
-            if (!directoryExist)
-                return;
+            
 
             MessageBox.Show("Yayy");
+
         }
 
         private void enterKeyPressed(object sender, KeyEventArgs e)
