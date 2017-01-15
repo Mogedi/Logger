@@ -39,7 +39,7 @@ namespace Logger
 
             
 
-            MessageBox.Show("Yayy");
+           // MessageBox.Show("Yayy");
 
         }
 
@@ -47,6 +47,12 @@ namespace Logger
         {
             if (e.Key == Key.Enter)
                 logButton_Click(sender, e);
+        }
+
+        private void clearButton_Click(object sender, RoutedEventArgs e)
+        {
+            fileAccess clearing = new fileAccess();
+            clearing.clearDirectory(ipTextBox.Text);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Logger
 
                 if (pingReply.Status == IPStatus.Success)
                 {
-                    MessageBox.Show("Pinging works");
+                    //MessageBox.Show("Pinging works");
                     return true;
                 }
             }

@@ -15,6 +15,8 @@ namespace Logger
         {
             List<string> listOfDirectories = getListOfDirectories(ip);
 
+            createDirectory(ip);
+
 
             foreach (string directory in listOfDirectories)
             {
@@ -23,9 +25,16 @@ namespace Logger
                 if (!directoryVerification)
                     return;
 
-                MessageBox.Show("FileAccess.Main: directory verification passed");
+                //MessageBox.Show("FileAccess.Main: directory verification passed");
 
-                Console.WriteLine(getLatestFileInEachDirectory(ip, directory));
+                string filePath = getLatestFileInEachDirectory(ip, directory);
+
+                Console.WriteLine(filePath);
+
+                readAndAnalyzeLog readAnalyze = new readAndAnalyzeLog();
+
+                readAnalyze.Main(filePath);
+
             }
 
         }
@@ -51,10 +60,10 @@ namespace Logger
                 returnValue = new DirectoryInfo(directory).Exists;
 
                 if (returnValue)
-                    MessageBox.Show("FileAccess.doesDirectoryExist: Directory Exist");
+                   // MessageBox.Show("FileAccess.doesDirectoryExist: Directory Exist");
 
                 if (!returnValue)
-                    MessageBox.Show("FileAccess.doesDirectoryExist: Directory does NOT EXIST");
+                   // MessageBox.Show("FileAccess.doesDirectoryExist: Directory does NOT EXIST");
 
                 Console.WriteLine(returnValue);
 
@@ -81,6 +90,30 @@ namespace Logger
             string PathToFile = filePath.ToString() + '\\' + nameOfFile.ToString();
 
             return PathToFile;
+        }
+
+        public void createDirectory(string ip)
+        {
+            string path = "C:\\Users\\" + Environment.UserName + "\\Logger\\" + ip + "\\";
+
+            bool directoryExist = Directory.Exists(path);
+
+            if (!directoryExist)
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
+
+        public void clearDirectory(string ip)
+        {
+            string path = "C:\\Users\\" + Environment.UserName + "\\Logger\\" + ip + "\\";
+
+            bool directoryExist = Directory.Exists(path);
+
+            if (directoryExist)
+            {
+                Directory.Delete(path, true);
+            }
         }
     }
 }
