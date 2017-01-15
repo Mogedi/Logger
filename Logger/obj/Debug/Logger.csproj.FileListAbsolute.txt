@@ -1,0 +1,14 @@
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\bin\Debug\Logger.exe.config
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\bin\Debug\Logger.exe
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\bin\Debug\Logger.pdb
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\MainWindow.g.cs
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\App.g.cs
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger_MarkupCompile.cache
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger_MarkupCompile.lref
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\MainWindow.baml
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.g.resources
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.Properties.Resources.resources
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.csproj.GenerateResource.Cache
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.exe
+c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.pdb
