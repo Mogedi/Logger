@@ -10,7 +10,7 @@
         <TextBox x:Name="ipTextBox" HorizontalAlignment="Left" Height="25" Margin="220,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" 
                  TextAlignment="Center"/>
         <TextBlock x:Name="ipTextBlock" HorizontalAlignment="Left" Margin="50,28,0,0" TextWrapping="Wrap" Text="Type in IP/Hostname:" VerticalAlignment="Top" FontSize="15"/>
-        <Button x:Name="LogButton" Content="LOG" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="75" Height="25"/>
+        <Button x:Name="LogButton" Content="LOG" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="LogButton_Click"/>
         <ScrollViewer Margin="25,60,25,25">
             <StackPanel x:Name="logInfoRowContainer">
 

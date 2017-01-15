@@ -24,5 +24,11 @@ namespace Logger
         {
             InitializeComponent();
         }
+
+        private void LogButton_Click(object sender, RoutedEventArgs e)
+        {
+            PingSystem testPing = new PingSystem();
+            bool testPingBool = testPing.pingVerification(ipTextBox.Text);
+        }
     }
 }
