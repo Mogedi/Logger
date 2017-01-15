@@ -25,10 +25,16 @@ namespace Logger
             InitializeComponent();
         }
 
-        private void LogButton_Click(object sender, RoutedEventArgs e)
+        private void logButton_Click(object sender, RoutedEventArgs e)
         {
             PingSystem testPing = new PingSystem();
             bool testPingBool = testPing.pingVerification(ipTextBox.Text);
+        }
+
+        private void enterKeyPressed(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                logButton_Click(sender, e);
         }
     }
 }
