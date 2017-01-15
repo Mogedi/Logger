@@ -15,7 +15,7 @@ namespace Logger
             try
             {
                 Ping pinger = new Ping();
-                PingReply pingReply = pinger.Send(ip);
+                PingReply pingReply = pinger.Send(ip, 500);
 
                 if (pingReply.Status == IPStatus.Success)
                 {

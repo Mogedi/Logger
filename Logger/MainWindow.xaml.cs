@@ -29,6 +29,18 @@ namespace Logger
         {
             PingSystem testPing = new PingSystem();
             bool testPingBool = testPing.pingVerification(ipTextBox.Text);
+
+            if (!testPingBool)
+                return;
+
+            fileAccess doesDirectoryExist = new fileAccess();
+
+            bool directoryExist = doesDirectoryExist.doesDirectoryExist(ipTextBox.Text);
+
+            if (!directoryExist)
+                return;
+
+            MessageBox.Show("Yayy");
         }
 
         private void enterKeyPressed(object sender, KeyEventArgs e)
