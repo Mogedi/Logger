@@ -52,7 +52,7 @@ namespace Logger
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             fileAccess clearing = new fileAccess();
-            clearing.clearDirectory(ipTextBox.Text);
+            clearing.clearLocalDirectory(ipTextBox.Text);
         }
     }
 }

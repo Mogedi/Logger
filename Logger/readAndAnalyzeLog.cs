@@ -9,22 +9,21 @@ namespace Logger
 {
     class readAndAnalyzeLog
     {
-
-        //static int count = 0;
         public void Main(string filePath, string localDirectory)
         {
-            //filePath = "C:\\Users\\mohamud.gedi\\Desktop\\Servers.txt";
-            //List<string> read = File.ReadAllLines(filePath).ToList();
-
-            //Console.WriteLine(read[0]);
-
             string localFilePath = copy(filePath, localDirectory);
 
-            read(localFilePath);
+            List<string> logData = read(localFilePath);
+
+            string tileOfLogFile = titleOfLogFile(filePath);
+
+            Console.WriteLine(tileOfLogFile + " " + countExceptions(logData));
+
+            
 
         }
 
-        public void read(string localFilePath)
+        public List<string> read(string localFilePath)
         {
             List<string> read = new List<string>();
 
@@ -42,16 +41,39 @@ namespace Logger
             file.Close();
 
             Console.WriteLine(read[0]);
+
+            return read;
         }
 
         public string copy(string filePath, string localDirectory)
         {
-            string fileName = filePath.Split('\\').Last();
+            string fileName = titleOfLogFile(filePath);
             string pathToCopyFileOverTo = localDirectory + fileName;
 
             File.Copy(filePath, pathToCopyFileOverTo, true);
 
             return pathToCopyFileOverTo;
         }
+
+        public int countExceptions(List<string> localLogFile)
+        {
+            int count = 0;
+            foreach(string item in localLogFile)
+            {
+                if(item.Contains("EXCEPTION="))
+                {
+                    count++;
+                }
+            }
+
+            //Console.WriteLine(count);
+
+            return count;
+        }
+        
+        public string titleOfLogFile(string filePath)
+        {
+            return filePath.Split('\\').Last();
+        } 
     }
 }

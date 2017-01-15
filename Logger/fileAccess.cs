@@ -15,21 +15,26 @@ namespace Logger
         {
             List<string> listOfDirectories = getListOfDirectories(ip);
 
-            string localDirectory = createDirectory(ip);
+            string localDirectory = createLocalDirectory(ip);
 
 
             foreach (string directory in listOfDirectories)
             {
                 bool directoryVerification = doesDirectoryExist(directory);
 
-                if (!directoryVerification)
-                    return;
+                MessageBox.Show("hit");
 
-                //MessageBox.Show("FileAccess.Main: directory verification passed");
+                if (!directoryVerification)
+                {
+                    MessageBox.Show("FileAccess.Main: Alpha Does not have have Log Directories of: " + directory);
+                    continue;
+                }
+
+                MessageBox.Show("FileAccess.Main: directory verification passed: " + directory);
 
                 string filePath = getLatestFileInEachDirectory(ip, directory);
 
-                Console.WriteLine(filePath);
+                //Console.WriteLine(filePath);
 
                 readAndAnalyzeLog readAnalyze = new readAndAnalyzeLog();
 
@@ -63,7 +68,7 @@ namespace Logger
                    // MessageBox.Show("FileAccess.doesDirectoryExist: Directory Exist");
 
                 if (!returnValue)
-                   // MessageBox.Show("FileAccess.doesDirectoryExist: Directory does NOT EXIST");
+                   MessageBox.Show("FileAccess.doesDirectoryExist: Directory does NOT EXIST");
 
                 Console.WriteLine(returnValue);
 
@@ -82,7 +87,7 @@ namespace Logger
 
             string PathToFileDirectory = directory.ToString() + '\\' + nameOfFileDirectory.ToString();
 
-            Console.WriteLine(PathToFileDirectory);
+            //Console.WriteLine(PathToFileDirectory);
 
             DirectoryInfo filePath = new DirectoryInfo(PathToFileDirectory);
             FileInfo nameOfFile = filePath.GetFiles().OrderByDescending(f => f.LastWriteTime).First();
@@ -92,7 +97,7 @@ namespace Logger
             return PathToFile;
         }
 
-        public string createDirectory(string ip)
+        public string createLocalDirectory(string ip)
         {
             string path = "C:\\Users\\" + Environment.UserName + "\\Logger\\" + ip + "\\";
 
@@ -106,7 +111,7 @@ namespace Logger
             return path;
         }
 
-        public void clearDirectory(string ip)
+        public void clearLocalDirectory(string ip)
         {
             string path = "C:\\Users\\" + Environment.UserName + "\\Logger\\" + ip + "\\";
 
