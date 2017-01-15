@@ -110,6 +110,12 @@ namespace Logger {
             return;
             case 3:
             this.LogButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 13 "..\..\MainWindow.xaml"
+            this.LogButton.Click += new System.Windows.RoutedEventHandler(this.LogButton_Click);
+            
+            #line default
+            #line hidden
             return;
             case 4:
             this.logInfoRowContainer = ((System.Windows.Controls.StackPanel)(target));
