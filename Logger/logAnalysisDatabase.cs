@@ -20,14 +20,14 @@ namespace Logger
 
         public string createPathToLogDataFile(string localDirectory, string titleOfLocalLogFile)
         {
-            string pathToLogDataFile = localDirectory + titleOfLocalLogFile.Split('.')[0] + "_LOG_DATA.txt";
+            string pathToLogDataFile = localDirectory +"LOG_DATA.txt";
 
             return pathToLogDataFile;
         }
 
         public void createAndWriteToLogDataFile(string pathToLogDataFile, string[] logDataAnalysis)
         {
-            File.WriteAllLines(pathToLogDataFile, logDataAnalysis);
+            File.AppendAllLines(pathToLogDataFile, logDataAnalysis);
         }
 
     }
