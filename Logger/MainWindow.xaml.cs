@@ -36,11 +36,6 @@ namespace Logger
             fileAccess file = new fileAccess();
 
             file.Main(ipTextBox.Text);
-
-            
-
-           // MessageBox.Show("Yayy");
-
         }
 
         private void enterKeyPressed(object sender, KeyEventArgs e)

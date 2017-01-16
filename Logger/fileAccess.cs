@@ -22,8 +22,6 @@ namespace Logger
             {
                 bool directoryVerification = doesDirectoryExist(directory);
 
-                MessageBox.Show("hit");
-
                 if (!directoryVerification)
                 {
                     MessageBox.Show("FileAccess.Main: Alpha Does not have have Log Directories of: " + directory);
@@ -33,8 +31,6 @@ namespace Logger
                 MessageBox.Show("FileAccess.Main: directory verification passed: " + directory);
 
                 string filePath = getLatestFileInEachDirectory(ip, directory);
-
-                //Console.WriteLine(filePath);
 
                 readAndAnalyzeLog readAnalyze = new readAndAnalyzeLog();
 
@@ -86,8 +82,6 @@ namespace Logger
             DirectoryInfo nameOfFileDirectory = alphaDirectory.GetDirectories().OrderByDescending(f => f.LastWriteTime).First();
 
             string PathToFileDirectory = directory.ToString() + '\\' + nameOfFileDirectory.ToString();
-
-            //Console.WriteLine(PathToFileDirectory);
 
             DirectoryInfo filePath = new DirectoryInfo(PathToFileDirectory);
             FileInfo nameOfFile = filePath.GetFiles().OrderByDescending(f => f.LastWriteTime).First();

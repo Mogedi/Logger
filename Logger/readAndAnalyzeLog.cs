@@ -9,18 +9,23 @@ namespace Logger
 {
     class readAndAnalyzeLog
     {
+        
+
+
         public void Main(string filePath, string localDirectory)
         {
             string localFilePath = copy(filePath, localDirectory);
 
             List<string> logData = read(localFilePath);
+            string titleOfLocalLogFile = titleOfLogFile(filePath);
 
-            string tileOfLogFile = titleOfLogFile(filePath);
+            Console.WriteLine(titleOfLocalLogFile + " " + countExceptions(logData));
 
-            Console.WriteLine(tileOfLogFile + " " + countExceptions(logData));
+            string[] logDataAnalysis = { titleOfLocalLogFile + " " + countExceptions(logData) };
 
-            
+            logAnalysisDatabase storeAnalysis = new logAnalysisDatabase();
 
+            storeAnalysis.Main(logDataAnalysis, titleOfLocalLogFile, localDirectory);
         }
 
         public List<string> read(string localFilePath)
@@ -28,10 +33,11 @@ namespace Logger
             List<string> read = new List<string>();
 
             int counter = 0;
+
             string line;
 
-            // Read the file and display it line by line.
             StreamReader file = new StreamReader(localFilePath);
+
             while ((line = file.ReadLine()) != null)
             {
                 read.Add(line);
@@ -39,8 +45,6 @@ namespace Logger
             }
 
             file.Close();
-
-            Console.WriteLine(read[0]);
 
             return read;
         }
@@ -66,8 +70,6 @@ namespace Logger
                 }
             }
 
-            //Console.WriteLine(count);
-
             return count;
         }
         
@@ -75,5 +77,6 @@ namespace Logger
         {
             return filePath.Split('\\').Last();
         } 
+
     }
 }
