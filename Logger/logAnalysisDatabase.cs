@@ -27,6 +27,15 @@ namespace Logger
 
         public void createAndWriteToLogDataFile(string pathToLogDataFile, string[] logDataAnalysis)
         {
+            //if (File.Exists(pathToLogDataFile))
+            //{
+            //    File.Delete(pathToLogDataFile);
+            //    File.WriteAllLines(pathToLogDataFile, logDataAnalysis);
+            //} else if (!File.Exists(pathToLogDataFile))
+            //{
+            //    File.WriteAllLines(pathToLogDataFile, logDataAnalysis);
+            //}
+
             File.AppendAllLines(pathToLogDataFile, logDataAnalysis);
         }
 

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Logger
 {
@@ -33,9 +34,25 @@ namespace Logger
             if (!testPingBool)
                 return;
 
+            string localLogDataFile = "C:\\Users\\" + Environment.UserName + "\\Logger\\" + ipTextBox.Text + "\\LOG_DATA.txt";
+
+            if (File.Exists(localLogDataFile))
+                File.Delete(localLogDataFile);
+
             fileAccess file = new fileAccess();
 
             file.Main(ipTextBox.Text);
+
+            LogInfoRowContainer.Children.Clear();
+
+            List<string> LogData = readLogDataFile(localLogDataFile);
+
+            foreach(string item in LogData)
+            {
+                LogInfoRowCreator rowInstance = new LogInfoRowCreator(item);
+                LogInfoRowContainer.Children.Add(rowInstance);
+            }
+
         }
 
         private void enterKeyPressed(object sender, KeyEventArgs e)
@@ -46,8 +63,32 @@ namespace Logger
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
+            LogInfoRowContainer.Children.Clear();
             fileAccess clearing = new fileAccess();
             clearing.clearLocalDirectory(ipTextBox.Text);
+        }
+
+        public List<string> readLogDataFile(string localLogDataFile)
+        {
+            
+
+            List<string> read = new List<string>();
+
+            int counter = 0;
+
+            string line;
+
+            StreamReader file = new StreamReader(localLogDataFile);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                read.Add(line);
+                counter++;
+            }
+
+            file.Close();
+
+            return read;
         }
     }
 }

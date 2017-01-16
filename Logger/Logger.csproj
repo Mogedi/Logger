@@ -56,7 +56,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="logAnalysisDatabase.cs" />
+    <Compile Include="LogInfoRowCreator.xaml.cs">
+      <DependentUpon>LogInfoRowCreator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="readAndAnalyzeLog.cs" />
+    <Page Include="LogInfoRowCreator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

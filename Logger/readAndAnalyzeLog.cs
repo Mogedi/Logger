@@ -21,7 +21,7 @@ namespace Logger
 
             Console.WriteLine(titleOfLocalLogFile + " " + countExceptions(logData));
 
-            string[] logDataAnalysis = { titleOfLocalLogFile + " " + countExceptions(logData) };
+            string[] logDataAnalysis = { titleOfLocalLogFile + "," + countExceptions(logData) + "," + localFilePath};
 
             logAnalysisDatabase storeAnalysis = new logAnalysisDatabase();
 

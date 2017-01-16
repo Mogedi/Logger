@@ -12,3 +12,5 @@ c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\De
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.csproj.GenerateResource.Cache
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.exe
 c:\users\mohamud.gedi\documents\visual studio 2015\Projects\Logger\Logger\obj\Debug\Logger.pdb
+C:\Users\mohamud.gedi\Documents\Visual Studio 2015\Projects\Logger\Logger\obj\Debug\LogInfoRowCreator.g.cs
+C:\Users\mohamud.gedi\Documents\Visual Studio 2015\Projects\Logger\Logger\obj\Debug\LogInfoRowCreator.baml
