@@ -78,17 +78,26 @@ namespace Logger
 
             string line;
 
-            StreamReader file = new StreamReader(localLogDataFile);
-
-            while ((line = file.ReadLine()) != null)
+            if (File.Exists(localLogDataFile))
             {
-                read.Add(line);
-                counter++;
+                StreamReader file = new StreamReader(localLogDataFile);
+
+                while ((line = file.ReadLine()) != null)
+                {
+                    read.Add(line);
+                    counter++;
+                }
+
+                file.Close();
+
+                return read;
             }
 
-            file.Close();
+
 
             return read;
+
+            
         }
     }
 }
